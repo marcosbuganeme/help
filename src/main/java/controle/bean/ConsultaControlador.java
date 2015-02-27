@@ -1,4 +1,4 @@
-package controle.visao;
+package controle.bean;
 
 import java.io.Serializable;
 import java.util.Collection;

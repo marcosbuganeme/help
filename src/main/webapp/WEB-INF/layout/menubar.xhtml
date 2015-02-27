@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:form>
+	<p:toolbar>
+		<f:facet name="left">
+			<p:commandButton type="button" value="Aluno" icon="ui-icon-person" />
+			<p:commandButton type="button" value="Curso" icon="ui-icon-folder-open" />
+			<span class="ui-separator"> <span
+				class="ui-icon ui-icon-grip-dotted-vertical" />
+			</span>
+			<p:commandButton type="button" value="Instrutor" icon="ui-icon-star" />
+			<p:menuButton value="Utilitários" iconPos="right">
+				<p:menuitem value="Ramais" icon="ui-icon-arrowrefresh-1-w" />
+				<p:menuitem value="Permissão" icon="ui-icon-disk" />
+			</p:menuButton>
+			<span class="ui-separator"> <span
+				class="ui-icon ui-icon-grip-dotted-vertical" />
+			</span>
+			<p:commandButton type="button" value="Relatórios" icon="ui-icon-image" />
+		</f:facet>
+		<f:facet name="right">
+			<p:outputLabel value="Bem vindo usuário logado" />
+			<span class="ui-separator"> <span
+				class="ui-icon ui-icon-grip-dotted-vertical" />
+			</span>
+			<p:menuButton value="Opções" iconPos="right">
+				<p:menuitem value="Perfil" icon="ui-icon-disk" />
+				<p:menuitem value="Deslogar" icon="ui-icon-arrowrefresh-1-w" />
+			</p:menuButton>
+		</f:facet>
+	</p:toolbar>
+</h:form>
+</html>
