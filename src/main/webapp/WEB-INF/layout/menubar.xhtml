@@ -9,20 +9,40 @@
 <h:form>
 	<p:toolbar>
 		<f:facet name="left">
-			<p:commandButton type="button" value="Aluno" icon="ui-icon-person" />
-			<p:commandButton type="button" value="Curso" icon="ui-icon-folder-open" />
-			<span class="ui-separator"> <span
-				class="ui-icon ui-icon-grip-dotted-vertical" />
-			</span>
-			<p:commandButton type="button" value="Instrutor" icon="ui-icon-star" />
-			<p:menuButton value="Utilitários" iconPos="right">
-				<p:menuitem value="Ramais" icon="ui-icon-arrowrefresh-1-w" />
-				<p:menuitem value="Permissão" icon="ui-icon-disk" />
+			<p:menuButton value="Comercial" iconPos="right">
+				<p:menuitem value="Aluno" outcome="/paginas/restrito/comercial/aluno" icon="ui-icon-battery-3" />
+				<p:menuitem value="Cliente" outcome="/paginas/restrito/comercial/cliente" icon="ui-icon-battery-0" />
 			</p:menuButton>
-			<span class="ui-separator"> <span
-				class="ui-icon ui-icon-grip-dotted-vertical" />
+			<span class="ui-separator">
+				<span class="ui-icon ui-icon-grip-dotted-vertical" />
 			</span>
-			<p:commandButton type="button" value="Relatórios" icon="ui-icon-image" />
+			<p:menuButton value="RH" iconPos="right">
+				<p:menuitem value="Cargo" outcome="/paginas/restrito/rh/cargo" icon="ui-icon-battery-0" />
+				<p:menuitem value="Colaborador" outcome="/paginas/restrito/rh/colaborador" icon="ui-icon-battery-3" />
+				<p:menuitem value="Terceirizado" outcome="/paginas/restrito/rh/terceiro" icon="ui-icon-battery-0" />
+			</p:menuButton>
+			<span class="ui-separator">
+				<span class="ui-icon ui-icon-grip-dotted-vertical" />
+			</span>
+			<p:menuButton value="Parametrização de turmas" iconPos="right">
+				<p:menuitem value="Agendar turma" outcome="/paginas/restrito/parametrizacao_turmas/agenda_turma" icon="ui-icon-battery-0" />
+				<p:menuitem value="Facilitador" outcome="/paginas/restrito/parametrizacao_turmas/facilitador" icon="ui-icon-battery-3" />
+				<p:menuitem value="Turma" outcome="/paginas/restrito/parametrizacao_turmas/turma" icon="ui-icon-battery-0" />
+			</p:menuButton>
+			<span class="ui-separator">
+				<span class="ui-icon ui-icon-grip-dotted-vertical" />
+			</span>
+			<p:menuButton value="Utilitário" iconPos="right">
+				<p:menuitem value="Permissão" outcome="/paginas/restrito/utilitario/permissao" icon="ui-icon-battery-0" />
+				<p:menuitem value="Usuário" outcome="/paginas/restrito/utilitario/usuario" icon="ui-icon-battery-3" />
+			</p:menuButton>
+			<span class="ui-separator">
+				<span class="ui-icon ui-icon-grip-dotted-vertical" />
+			</span>
+			<p:menuButton value="Relatório" iconPos="right">
+				<p:menuitem value="Despesa" outcome="/paginas/restrito/relatorio/despesa" icon="ui-icon-battery-0" />
+				<p:menuitem value="Venda" outcome="/paginas/restrito/relatorio/venda" icon="ui-icon-battery-3" />
+			</p:menuButton>
 		</f:facet>
 		<f:facet name="right">
 			<p:outputLabel value="Bem vindo usuário logado" />
@@ -30,8 +50,8 @@
 				class="ui-icon ui-icon-grip-dotted-vertical" />
 			</span>
 			<p:menuButton value="Opções" iconPos="right">
-				<p:menuitem value="Perfil" icon="ui-icon-disk" />
-				<p:menuitem value="Deslogar" icon="ui-icon-arrowrefresh-1-w" />
+				<p:menuitem value="Perfil" icon="ui-icon-battery-0" />
+				<p:menuitem value="Deslogar" outcome="/paginas/publico/login" icon="ui-icon-battery-3" />
 			</p:menuButton>
 		</f:facet>
 	</p:toolbar>
