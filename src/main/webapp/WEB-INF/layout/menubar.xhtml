@@ -16,6 +16,28 @@
 			<span class="ui-separator">
 				<span class="ui-icon ui-icon-grip-dotted-vertical" />
 			</span>
+			<p:menuButton value="Corporativo" iconPos="right">
+				<p:menuitem value="Agendar turma" outcome="/paginas/restrito/parametrizacao_turmas/agenda_turma" icon="ui-icon-battery-0" />
+				<p:menuitem value="Facilitador" outcome="/paginas/restrito/parametrizacao_turmas/facilitador" icon="ui-icon-battery-3" />
+				<p:menuitem value="Turma" outcome="/paginas/restrito/parametrizacao_turmas/turma" icon="ui-icon-battery-0" />
+			</p:menuButton>			
+			<span class="ui-separator">
+				<span class="ui-icon ui-icon-grip-dotted-vertical" />
+			</span>
+			<p:menuButton value="Financeiro" iconPos="right">
+				<p:menuitem value="Contas a pagar" outcome="/paginas/restrito/financeiro/conta_pagar" icon="ui-icon-battery-0" />
+				<p:menuitem value="Contas a receber" outcome="/paginas/restrito/financeiro/conta_receber" icon="ui-icon-battery-3" />
+			</p:menuButton>
+			<span class="ui-separator">
+				<span class="ui-icon ui-icon-grip-dotted-vertical" />
+			</span>
+			<p:menuButton value="Relatório" iconPos="right">
+				<p:menuitem value="Despesa" outcome="/paginas/restrito/relatorio/despesa" icon="ui-icon-battery-0" />
+				<p:menuitem value="Venda" outcome="/paginas/restrito/relatorio/venda" icon="ui-icon-battery-3" />
+			</p:menuButton>
+			<span class="ui-separator">
+				<span class="ui-icon ui-icon-grip-dotted-vertical" />
+			</span>
 			<p:menuButton value="RH" iconPos="right">
 				<p:menuitem value="Cargo" outcome="/paginas/restrito/rh/cargo" icon="ui-icon-battery-0" />
 				<p:menuitem value="Colaborador" outcome="/paginas/restrito/rh/colaborador" icon="ui-icon-battery-3" />
@@ -24,24 +46,9 @@
 			<span class="ui-separator">
 				<span class="ui-icon ui-icon-grip-dotted-vertical" />
 			</span>
-			<p:menuButton value="Parametrização de turmas" iconPos="right">
-				<p:menuitem value="Agendar turma" outcome="/paginas/restrito/parametrizacao_turmas/agenda_turma" icon="ui-icon-battery-0" />
-				<p:menuitem value="Facilitador" outcome="/paginas/restrito/parametrizacao_turmas/facilitador" icon="ui-icon-battery-3" />
-				<p:menuitem value="Turma" outcome="/paginas/restrito/parametrizacao_turmas/turma" icon="ui-icon-battery-0" />
-			</p:menuButton>
-			<span class="ui-separator">
-				<span class="ui-icon ui-icon-grip-dotted-vertical" />
-			</span>
 			<p:menuButton value="Utilitário" iconPos="right">
 				<p:menuitem value="Permissão" outcome="/paginas/restrito/utilitario/permissao" icon="ui-icon-battery-0" />
 				<p:menuitem value="Usuário" outcome="/paginas/restrito/utilitario/usuario" icon="ui-icon-battery-3" />
-			</p:menuButton>
-			<span class="ui-separator">
-				<span class="ui-icon ui-icon-grip-dotted-vertical" />
-			</span>
-			<p:menuButton value="Relatório" iconPos="right">
-				<p:menuitem value="Despesa" outcome="/paginas/restrito/relatorio/despesa" icon="ui-icon-battery-0" />
-				<p:menuitem value="Venda" outcome="/paginas/restrito/relatorio/venda" icon="ui-icon-battery-3" />
 			</p:menuButton>
 		</f:facet>
 		<f:facet name="right">

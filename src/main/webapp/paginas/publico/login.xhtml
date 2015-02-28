@@ -14,35 +14,39 @@
 	</h:head>
 
 	<h:body>
-		<div id="posicionarContainer" align="center" class="container">
-			<p:fieldset legend="Autenticação de usuário" toggleable="true" toggleSpeed="300" styleClass="fieldsetLogin">
-				<div class="row">
-					<div class="col-xs-2">
-						<p:outputLabel value="E-mail" for="email" />
+		<h:form>
+			<p:growl autoUpdate="true" />
+
+			<div id="posicionarContainer" align="center" class="container">
+				<p:fieldset legend="Autenticação de usuário" toggleable="true" toggleSpeed="300" styleClass="fieldsetLogin">
+					<div class="row">
+						<div class="col-xs-2">
+							<p:outputLabel value="E-mail" for="email" />
+						</div>
+						<div class="col-xs-10">
+							<p:inputText id="email" value="#{autenticacaoBean.email}" styleClass="form-control" />
+						</div>
 					</div>
-					<div class="col-xs-10">
-						<p:inputText id="email" styleClass="form-control" />
+					<p:spacer height="1%" />
+					<div class="row">
+						<div class="col-xs-2">
+							<p:outputLabel value="Senha" for="senha" />
+						</div>
+						<div class="col-xs-10">
+							<p:password id="senha" value="#{autenticacaoBean.senha}" styleClass="form-control" />
+						</div>
 					</div>
-				</div>
-				<p:spacer height="1%" />
-				<div class="row">
-					<div class="col-xs-2">
-						<p:outputLabel value="Senha" for="senha" />
+					<p:spacer height="1%" />
+					<div class="row">
+						<div class="col-xs-6">
+							<p:commandButton id="btnAutenticar" value="Autenticar" action="#{autenticacaoBean.autenticar()}" styleClass="btn btn-lg btn-block" />
+						</div>
+						<div class="col-xs-6">
+							<p:commandButton id="btnLimpar" value="Limpar" update="@form" process="@all" styleClass="btn btn-lg btn-block" />
+						</div>
 					</div>
-					<div class="col-xs-10">
-						<p:password id="senha" styleClass="form-control" />
-					</div>
-				</div>
-				<p:spacer height="1%" />
-				<div class="row">
-					<div class="col-xs-6">
-						<p:button id="btnAutenticar" value="Autenticar" outcome="/paginas/restrito/index" styleClass="btn btn-lg btn-block" />
-					</div>
-					<div class="col-xs-6">
-						<p:commandButton id="btnLimpar" value="Limpar" styleClass="btn btn-lg btn-block" />
-					</div>
-				</div>
-			</p:fieldset>
-		</div>
+				</p:fieldset>
+			</div>
+		</h:form>
 	</h:body>
 </html>
