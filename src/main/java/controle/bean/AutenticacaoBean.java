@@ -35,7 +35,7 @@ public class AutenticacaoBean implements Serializable {
 
 	public String autenticar() {
 
-		if (!( this.email.equals("marcos.after@gmail.com") && this.senha.equals("123456") )) {
+		if (!( this.email.equals("marcos.olavo@help.com.br") && this.senha.equals("123456") )) {
 
 			final FacesContext context = FacesContext.getCurrentInstance();
 
@@ -49,6 +49,13 @@ public class AutenticacaoBean implements Serializable {
 		return "/paginas/restrito/index";
 	}
 
+	public void limparCampos() {
+
+		this.email = new String();
+
+		this.senha = new String();
+	}
+	
 	/**
 	 * Retorna o valor do atributo <code>email</code>
 	 *

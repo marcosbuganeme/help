@@ -1,9 +1,13 @@
 #posicionarContainer {
-	margin-top: 15%;
+	margin-top: 5%;
 }
 
 .fieldsetLogin {
 	width: 50% !important;
+}
+
+.semborda tr, .semborda td {  
+    border: none !important;  
 }
 
 .rodape {

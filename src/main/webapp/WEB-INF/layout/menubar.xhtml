@@ -10,16 +10,17 @@
 	<p:toolbar>
 		<f:facet name="left">
 			<p:menuButton value="Comercial" iconPos="right">
-				<p:menuitem value="Aluno" outcome="/paginas/restrito/comercial/aluno" icon="ui-icon-battery-3" />
 				<p:menuitem value="Cliente" outcome="/paginas/restrito/comercial/cliente" icon="ui-icon-battery-0" />
+				<p:menuitem value="Agendar turma" outcome="/paginas/restrito/parametrizacao_turmas/agenda_turma" icon="ui-icon-battery-3" />
+				<p:menuitem value="Facilitador" outcome="/paginas/restrito/parametrizacao_turmas/facilitador" icon="ui-icon-battery-0" />
+				<p:menuitem value="Turma" outcome="/paginas/restrito/parametrizacao_turmas/turma" icon="ui-icon-battery-3" />				
 			</p:menuButton>
 			<span class="ui-separator">
 				<span class="ui-icon ui-icon-grip-dotted-vertical" />
 			</span>
-			<p:menuButton value="Corporativo" iconPos="right">
-				<p:menuitem value="Agendar turma" outcome="/paginas/restrito/parametrizacao_turmas/agenda_turma" icon="ui-icon-battery-0" />
-				<p:menuitem value="Facilitador" outcome="/paginas/restrito/parametrizacao_turmas/facilitador" icon="ui-icon-battery-3" />
-				<p:menuitem value="Turma" outcome="/paginas/restrito/parametrizacao_turmas/turma" icon="ui-icon-battery-0" />
+			<p:menuButton value="Instrutor" iconPos="right">
+				<p:menuitem value="Aluno" outcome="/paginas/restrito/instrutor/aluno" icon="ui-icon-battery-0" />
+				<p:menuitem value="Lançar nota" outcome="/paginas/restrito/parametrizacao_turmas/turma" icon="ui-icon-battery-3" />
 			</p:menuButton>			
 			<span class="ui-separator">
 				<span class="ui-icon ui-icon-grip-dotted-vertical" />
@@ -28,6 +29,14 @@
 				<p:menuitem value="Contas a pagar" outcome="/paginas/restrito/financeiro/conta_pagar" icon="ui-icon-battery-0" />
 				<p:menuitem value="Contas a receber" outcome="/paginas/restrito/financeiro/conta_receber" icon="ui-icon-battery-3" />
 			</p:menuButton>
+			<span class="ui-separator">
+				<span class="ui-icon ui-icon-grip-dotted-vertical" />
+			</span>
+			<p:menuButton value="Logística" iconPos="right">
+				<p:menuitem value="Materiais" outcome="/paginas/restrito/logistica/materiais" icon="ui-icon-battery-0" />
+				<p:menuitem value="Entrada materiais" outcome="/paginas/restrito/logistica/entrada_materiais" icon="ui-icon-battery-3" />
+				<p:menuitem value="Saída materiais" outcome="/paginas/restrito/logistica/saida_materiais" icon="ui-icon-battery-0" />
+			</p:menuButton>			
 			<span class="ui-separator">
 				<span class="ui-icon ui-icon-grip-dotted-vertical" />
 			</span>
@@ -52,11 +61,7 @@
 			</p:menuButton>
 		</f:facet>
 		<f:facet name="right">
-			<p:outputLabel value="Bem vindo usuário logado" />
-			<span class="ui-separator"> <span
-				class="ui-icon ui-icon-grip-dotted-vertical" />
-			</span>
-			<p:menuButton value="Opções" iconPos="right">
+			<p:menuButton value="Configurações" iconPos="right">
 				<p:menuitem value="Perfil" icon="ui-icon-battery-0" />
 				<p:menuitem value="Deslogar" outcome="/paginas/publico/login" icon="ui-icon-battery-3" />
 			</p:menuButton>

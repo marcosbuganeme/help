@@ -16,9 +16,13 @@
 	<h:body>
 		<h:form>
 			<p:growl autoUpdate="true" />
-
 			<div id="posicionarContainer" align="center" class="container">
-				<p:fieldset legend="Autenticação de usuário" toggleable="true" toggleSpeed="300" styleClass="fieldsetLogin">
+
+				<ui:include src="/WEB-INF/layout/cabecalho.xhtml" />
+
+				<p:fieldset id="fieldsetLogin" legend="Autenticação de usuário" toggleable="true" toggleSpeed="300" styleClass="fieldsetLogin">
+					<p:focus context="fieldsetLogin"/>
+
 					<div class="row">
 						<div class="col-xs-2">
 							<p:outputLabel value="E-mail" for="email" />
@@ -42,7 +46,7 @@
 							<p:commandButton id="btnAutenticar" value="Autenticar" action="#{autenticacaoBean.autenticar()}" styleClass="btn btn-lg btn-block" />
 						</div>
 						<div class="col-xs-6">
-							<p:commandButton id="btnLimpar" value="Limpar" update="@form" process="@all" styleClass="btn btn-lg btn-block" />
+							<p:commandButton id="btnLimpar" value="Limpar" action="#{autenticacaoBean.limparCampos()}" update="@form" process="@all" styleClass="btn btn-lg btn-block" />
 						</div>
 					</div>
 				</p:fieldset>
