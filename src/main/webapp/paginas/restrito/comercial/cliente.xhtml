@@ -8,7 +8,7 @@
 
 	<ui:composition template="/WEB-INF/layout/template.xhtml">
 		<ui:define name="corpo">
-			<h:form>
+			<h:form id="frmAddCliente" styleClass="form-horizontal">
 				<p:toolbar>
 					<f:facet name="left">
 						<p:button value="Página inicial" outcome="/paginas/restrito/index" />						
@@ -25,35 +25,101 @@
 
 				<p:spacer height="2%" />
 
-				<p:panel header="Cadastro de clientes" toggleOrientation="vertical" toggleable="true" toggleSpeed="600">
-					<p:focus context="panelGridCliente" />
-					<p:panelGrid id="panelGridCliente" columns="4" layout="grid">
-						<p:outputLabel value="Nome" for="nome" />
-						<p:inputText id="nome" style="width: 100%;" />
+				<p:panel id="panelCliente" header="Cadastro de clientes" toggleOrientation="vertical" toggleable="true" toggleSpeed="600">
+					<p:spacer height="1%" />
+					<p:focus context="panelCliente" />
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="row">
+								<div class="col-xs-2">
+									<p:outputLabel value="Nome" for="nome" styleClass="control-label" />
+								</div>
+								<div class="col-xs-10">
+									<p:inputText id="nome" required="true" requiredMessage="O cliente deve ter um nome!!" styleClass="form-control" />
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="row">
+								<div class="col-xs-2">
+									<p:outputLabel value="E-mail" for="email" styleClass="control-label" />		
+								</div>
+								<div class="col-xs-10">
+									<p:inputText id="email" required="true" requiredMessage="Insira o e-mail do cliente!!" styleClass="form-control" />
+								</div>
+							</div>
+						</div>
+					</div>
 
-						<p:outputLabel value="E-mail" for="email" />
-						<p:inputText id="email" styleClass="form-control" />
+					<p:spacer height="1%" />
 
-						<p:outputLabel value="Data de nascimento" for="dataNascimento" />
-						<h:panelGroup>
-							<p:calendar id="dataNascimento" mask="99/99/9999" mode="popup" navigator="true" pattern="dd/MM/yyyy" showOn="button">
-								<f:convertDateTime pattern="dd/MM/yyyy" />
-							</p:calendar>
-						</h:panelGroup>
+					<div class="row">
+						<div class="col-xs-3">
+							<div class="row">
+								<div class="col-xs-2">
+									<p:outputLabel value="CPF" for="cpf" />
+								</div>
+								<div class="col-xs-10">
+									<p:inputMask id="cpf" mask="999.999.999-99" styleClass="form-control" />
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-3">
+							<div class="row">
+								<div class="col-xs-2">
+									<p:outputLabel value="RG" for="rg" styleClass="control-label" />
+								</div>
+								<div class="col-xs-10">
+									<p:inputMask id="rg" mask="999.999-9" maxlength="7" styleClass="form-control" />
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="row">
+								<div class="col-xs-4">
+									<p:outputLabel value="Data de nascimento" for="dataNascimento" />
+								</div>
+								<div class="col-xs-8">
+									<p:calendar id="dataNascimento" locale="pt_BR" mode="popup" navigator="true" pattern="dd/MM/yyyy"
+										showButtonPanel="true" showOn="button" showWeek="true" readonly="true">
+										<f:convertDateTime pattern="dd/MM/yyyy" />
+									</p:calendar>								
+								</div>
+							</div>
+						</div>
+					</div>
 
-						<p:outputLabel value="Cpf" for="cpf" />
-						<p:inputMask id="cpf" mask="999.999.999-99" styleClass="form-control" />
-						
-						<p:outputLabel value="Rg" for="rg" />
-						<p:inputText id="rg" maxlength="7" />
-					</p:panelGrid>
+					<p:spacer height="1%" />					
 
-					<p:spacer height="2%" />
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="row">
+								<div class="col-xs-5">
+									<p:outputLabel value="Como conheceu a Help?" for="comboEncontrou" styleClass="control-label" />
+								</div>
+								<div class="col-xs-7">
+									<p:selectOneMenu id="comboEncontrou" filter="true" filterMatchMode="startsWith" required="true"
+										requiredMessage="Selecione uma opção para o cliente">
+										<f:selectItem itemLabel="Selecione uma opção" noSelectionOption="true" />
+										<f:selectItem itemLabel="Bing, Google, Yahoo, Linkedin, Facebook" itemValue="motores de busca"/>
+										<f:selectItem itemLabel="Comercial da televisão" itemValue="midia digital" />
+										<f:selectItem itemLabel="Revistas de tecnologia e inovação" itemValue="midia impressa" />
+									</p:selectOneMenu>
+								</div>
+							</div>
+						</div>
+					</div>
 
-					<p:panelGrid columns="2" styleClass="semborda">
-						<p:commandButton value="Salvar" styleClass="btn btn-block" />
-						<p:commandButton value="Limpar" styleClass="btn btn-block" />
-					</p:panelGrid>
+					<p:spacer height="1%" />
+
+					<div class="row">
+						<div class="col-xs-6">
+							<p:commandButton id="btnSalvar" value="Salvar" styleClass="btn btn-block" />
+						</div>
+						<div class="col-xs-6">
+							<p:commandButton id="btnLimpar" value="Limpar" update="@form" resetValues="true" styleClass="btn btn-block" />
+						</div>
+					</div>
 				</p:panel>
 			</h:form>
 		</ui:define>

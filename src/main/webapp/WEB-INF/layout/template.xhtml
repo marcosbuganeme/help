@@ -16,7 +16,7 @@
 </h:head>
 
 <h:body>
-	<p:growl id="messages" showDetail="true" />
+	<p:growl id="growl" autoUpdate="true" />
 	<p:spacer height="5%" />
 	<header>
 		<div class="container">
@@ -27,10 +27,13 @@
 	<p:spacer height="5%" />
 	<div id="corpo">
 		<div class="container">
+			<p:messages id="messages" autoUpdate="true" closable="true" />
 			<ui:insert name="corpo" />
 		</div>
 	</div>
 	<p:spacer height="5%" />
 	<ui:include src="/WEB-INF/layout/rodape.xhtml" />
+	
+	<h:outputScript library="js" name="br.com.help.js" />
 </h:body>
 </html>
